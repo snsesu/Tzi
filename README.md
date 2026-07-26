@@ -16,8 +16,10 @@ Then open http://localhost:3000
 - `/search` — Search
 - `/categories` — Browse by genre
 - `/title/[id]` — Content details (e.g. `/title/nova-drift`)
+- `/login` — Sign in / sign up
+- `/universe` — My Universe (favorites)
 
 ## Status
-Phase 1 (design + frontend) is mostly done. Phase 2 (Supabase database, auth,
-favorites, watch history) has not started yet. Content is placeholder/mock data
+Phase 1 (design + frontend) is done. Phase 2 (Supabase database, auth,
+favorites, watch history) is live. Content is placeholder/mock data
 in `lib/catalog.ts` until a real content source is connected.
