@@ -9,7 +9,7 @@ const links = [
   { label: "Anime", href: "/categories" },
   { label: "Series", href: "/categories" },
   { label: "Discover", href: "/search" },
-  { label: "My Universe", href: "/login" },
+  { label: "My Universe", href: "/universe" },
 ];
 
 export default function Navbar() {
