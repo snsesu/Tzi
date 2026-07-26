@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
-import { Play, Plus, Star } from "lucide-react";
+import { Play, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContentCard from "@/components/ContentCard";
+import AddToUniverseButton from "@/components/AddToUniverseButton";
 import { catalog } from "@/lib/catalog";
 
 export function generateStaticParams() {
@@ -46,9 +47,7 @@ export default function TitlePage({ params }: { params: { id: string } }) {
               <button className="flex items-center gap-2 px-6 py-3 rounded-lg border border-nexa-purple shadow-glow text-sm font-medium">
                 <Play size={16} /> PLAY
               </button>
-              <button className="flex items-center gap-2 px-6 py-3 rounded-lg border border-nexa-border text-sm font-medium">
-                <Plus size={16} /> MY UNIVERSE
-              </button>
+              <AddToUniverseButton slug={item.id} />
             </div>
           </div>
         </div>
