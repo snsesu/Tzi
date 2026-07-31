@@ -1,4 +1,5 @@
 import { Play, ArrowRight, Clapperboard, Tv, PlaySquare, Compass, Hexagon, Sparkles } from "lucide-react";
+import NexaCoreOrbit from "./NexaCoreOrbit";
 
 const sideLinks = [
   { icon: Clapperboard, title: "Cinema", sub: "Movies & Films" },
@@ -47,13 +48,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center w-[380px] h-[380px] mx-auto">
-          <div className="absolute inset-0 rounded-full bg-nexa-gradient opacity-20 blur-3xl" />
-          <div className="w-40 h-40 rounded-full border border-nexa-purple/60 flex flex-col items-center justify-center text-center shadow-glow">
-            <span className="text-sm font-bold tracking-widest">NEXA</span>
-            <span className="text-xs text-gray-400 tracking-widest">CORE</span>
-          </div>
-        </div>
+        <NexaCoreOrbit />
 
         <div className="hidden lg:block bg-nexa-panel/60 border border-nexa-border rounded-xl divide-y divide-nexa-border/60">
           {sideLinks.map(({ icon: Icon, title, sub }) => (
