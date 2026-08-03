@@ -1,5 +1,13 @@
 import { Play, ArrowRight } from "lucide-react";
 
+const TILE_COLORS = [
+  "linear-gradient(160deg,#241a2e,#4a2f5e)",
+  "linear-gradient(160deg,#1a2440,#2f4a78)",
+  "linear-gradient(160deg,#2a1e1e,#5e3a2f)",
+  "linear-gradient(160deg,#1e2a24,#2f5e46)",
+  "linear-gradient(160deg,#2a1a3a,#5c3a8f)",
+];
+
 const stills = [
   { w: 2, h: 2, title: "Nova Drift", tag: "Sci-Fi" },
   { w: 1, h: 1, title: "Ashfall", tag: "Action" },
@@ -14,11 +22,11 @@ const stats = [
   { value: "20K+", label: "Anime" },
 ];
 
-function StillTile({ w, h, title, tag }: { w: number; h: number; title: string; tag: string }) {
+function StillTile({ w, h, title, tag, color }: { w: number; h: number; title: string; tag: string; color: string }) {
   return (
     <div
-      className="relative overflow-hidden rounded-md bg-graphite"
-      style={{ gridColumn: `span ${w}`, gridRow: `span ${h}` }}
+      className="relative overflow-hidden rounded-md min-h-[100px]"
+      style={{ gridColumn: `span ${w}`, gridRow: `span ${h}`, background: color }}
     >
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
       <div className="absolute left-3 right-3 bottom-3">
@@ -70,9 +78,9 @@ export default function Hero() {
 
           {/* Right: Product UI Mockup Container — 10px radius, twilight border halo */}
           <div className="rounded-card border border-twilight shadow-halo bg-graphite p-3">
-            <div className="grid grid-cols-4 gap-2" style={{ gridAutoRows: 110 }}>
-              {stills.map((s) => (
-                <StillTile key={s.title} {...s} />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2" style={{ gridAutoRows: 120 }}>
+              {stills.map((s, i) => (
+                <StillTile key={s.title} {...s} color={TILE_COLORS[i]} />
               ))}
             </div>
           </div>
@@ -84,9 +92,9 @@ export default function Hero() {
         <p className="text-[12px] uppercase tracking-[0.06em] text-iris font-normal leading-none mb-6">
           Explore Worlds
         </p>
-        <div className="grid grid-cols-4 gap-3" style={{ gridAutoRows: 130 }}>
-          {stills.map((s) => (
-            <StillTile key={`b-${s.title}`} {...s} />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3" style={{ gridAutoRows: 140 }}>
+          {stills.map((s, i) => (
+            <StillTile key={`b-${s.title}`} {...s} color={TILE_COLORS[i]} />
           ))}
         </div>
       </section>
