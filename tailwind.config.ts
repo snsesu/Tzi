@@ -9,9 +9,12 @@ const config: Config = {
     extend: {
       colors: {
         nexa: {
-          bg: "#050508",
-          panel: "#0b0b12",
-          border: "#1c1c2a",
+          bg: "#000000",
+          panel: "#0d0d0d",
+          surface: "#1a1a1a",
+          border: "#27272a",
+          slate: "#767d88",
+          muted: "#a7a7a7",
           purple: "#7c5cff",
           blue: "#4f8bff",
         },
@@ -19,11 +22,8 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
-      backgroundImage: {
-        "nexa-gradient": "linear-gradient(90deg, #9b6bff 0%, #5b8bff 100%)",
-      },
       boxShadow: {
-        glow: "0 0 40px rgba(124, 92, 255, 0.35)",
+        glow: "none",
       },
     },
   },
