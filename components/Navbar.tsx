@@ -14,36 +14,40 @@ const links = [
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-8 py-5 border-b border-nexa-border/60">
-      <Link href="/" className="text-base font-normal tracking-widest">
+    <nav className="flex items-center justify-between px-8 py-5">
+      <Link href="/" className="text-base font-normal tracking-widest text-carbon">
         NEXA
       </Link>
 
-      <ul className="hidden md:flex items-center gap-8 text-sm text-nexa-slate">
+      <ul className="hidden md:flex items-center gap-8 text-sm">
         {links.map((link, i) => (
           <li key={link.label}>
             <Link
               href={link.href}
-              className={i === 0 ? "text-white" : "hover:text-white cursor-pointer"}
+              className={
+                i === 0
+                  ? "text-carbon"
+                  : "text-carbon/70 hover:text-carbon hover:underline underline-offset-4 transition"
+              }
             >
-              {link.label.toUpperCase()}
+              {link.label}
             </Link>
           </li>
         ))}
       </ul>
 
       <div className="flex items-center gap-5">
-        <Link href="/search" className="text-nexa-slate hover:text-white">
+        <Link href="/search" className="text-carbon/70 hover:text-carbon">
           <Search size={18} />
         </Link>
-        <Link href="/login" className="text-sm text-nexa-slate hidden sm:block cursor-pointer">
+        <Link href="/login" className="text-sm text-carbon hidden sm:block">
           Sign in
         </Link>
         <Link
           href="/login"
-          className="px-4 py-2 rounded text-sm font-semibold bg-white text-black"
+          className="px-5 py-3 rounded-pill text-sm font-medium bg-carbon text-obsidian"
         >
-          Sign up
+          Start Free Trial
         </Link>
       </div>
     </nav>
