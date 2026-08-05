@@ -44,7 +44,7 @@ export default function Navbar() {
           Sign in
         </Link>
         <Link
-          href="/login"
+          href="/register"
           className="px-5 py-3 rounded-pill text-sm font-medium bg-carbon text-obsidian"
         >
           Start Free Trial
