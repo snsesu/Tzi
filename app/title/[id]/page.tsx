@@ -51,7 +51,7 @@ export default async function TitlePage({ params }: { params: { id: string } }) 
               <button className="flex items-center gap-2 px-6 py-3 rounded-pill bg-carbon text-obsidian text-sm font-medium">
                 <Play size={16} /> Play
               </button>
-              <AddToUniverseButton slug={item.id} />
+              <AddToUniverseButton slug={item.slug} />
             </div>
           </div>
         </div>
