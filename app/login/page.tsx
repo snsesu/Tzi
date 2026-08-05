@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Mail, Lock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { supabase } from "@/lib/supabase";
@@ -88,17 +89,24 @@ export default function LoginPage() {
                 className="w-full bg-obsidian border border-charcoal rounded-lg pl-11 pr-4 py-3 text-sm text-carbon outline-none focus:border-iris"
               />
             </div>
-            <div className="relative">
-              <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-smoke" />
-              <input
-                type="password"
-                required
-                minLength={6}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                className="w-full bg-obsidian border border-charcoal rounded-lg pl-11 pr-4 py-3 text-sm text-carbon outline-none focus:border-iris"
-              />
+            <div>
+              <div className="relative">
+                <Lock size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-smoke" />
+                <input
+                  type="password"
+                  required
+                  minLength={6}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                  className="w-full bg-obsidian border border-charcoal rounded-lg pl-11 pr-4 py-3 text-sm text-carbon outline-none focus:border-iris"
+                />
+              </div>
+              {mode === "login" && (
+                <Link href="/forgot-password" className="text-xs text-smoke hover:text-iris mt-2 inline-block">
+                  Forgot password?
+                </Link>
+              )}
             </div>
 
             {error && <p className="text-sm text-red-400">{error}</p>}
